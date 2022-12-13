@@ -23,7 +23,7 @@ export class App extends Component {
 
   }
   checkIsInContacts = (value) =>{
-    this.state.contacts.map(contact =>{
+    this.state.contacts.forEach(contact =>{
       if (contact.name === `${value}`) {
         alert(`${contact.name} is alrledy in contacts`)
         
