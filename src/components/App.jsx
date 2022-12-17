@@ -29,7 +29,6 @@ export class App extends Component {
       this.setState({
         filter: `${value}`,
       });
-      this.contactsFilter()
   }
  addContact = (name,telephone) =>{
    if (this.checkIsInContacts(name) ) {
