@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Input, Label } from "./inputFilter.styled";
+import { Input, Label } from "./InputFilter.styled";
 
 export class InputFilter extends Component {
    handeInput = ({target}) =>{

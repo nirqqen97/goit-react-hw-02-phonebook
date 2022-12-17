@@ -1,5 +1,5 @@
-import { ContactItem } from "../contactItem/contactItem";
-import { FormList } from "./contacts.styled";
+import { ContactItem } from "../ContactItem/ContactItem";
+import { FormList } from "./Contacts.styled";
 
 export const Contacts = ({contacts,deleteFromContacts}) =>{
     return <FormList>

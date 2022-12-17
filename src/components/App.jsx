@@ -1,8 +1,8 @@
 import shortid from "shortid";
 import { Component } from "react";
-import { Form } from "./form/form";
-import {Contacts } from "./contacts/contacts";
-import {InputFilter} from "./inputFilter/inputFilter";
+import { Form } from "./Form/Form";
+import {Contacts } from "./Contacts/Contacts";
+import {InputFilter} from "./InputFilter/InputFilter";
 import {Container,Title} from "./App.styled";
 
 
@@ -22,13 +22,8 @@ export class App extends Component {
     this.setState({ contacts });
 
   }
-  checkIsInContacts = (value) =>{
-    this.state.contacts.forEach(contact =>{
-      if (contact.name === `${value}`) {
-        alert(`${contact.name} is alrledy in contacts`)
-        
-      }
-    })
+  checkIsInContacts = (value) => {
+    return this.state.contacts.find(contact => contact.name === value) !== undefined;
   }
   addFilter = (value) => {
       this.setState({
@@ -37,7 +32,10 @@ export class App extends Component {
       this.contactsFilter()
   }
  addContact = (name,telephone) =>{
-  this.checkIsInContacts(name)   ////////как сделать тут чтобы выкидывало из функции ? 
+   if (this.checkIsInContacts(name) ) {
+     alert("adas")
+     return
+   }
     const contact = {
       id : shortid.generate(),
       name,
@@ -55,18 +53,13 @@ export class App extends Component {
   
      }
     render(){
-      let contacts;
-    if (this.state.filter === '') {
-      contacts = <Contacts contacts = {this.state.contacts} deleteFromContacts = {this.deleteFromContacts}/>;
-    } else {
-      contacts = <Contacts contacts = {this.contactsFilter()} deleteFromContacts = {this.deleteFromContacts}/>;
-    }
+
       return (
       <Container>
         <Form onSubmit = {this.addContact}/>
         <Title>Contacts</Title>
         <InputFilter onInput = {this.addFilter}/>
-        {contacts}    
+        <Contacts contacts = {this.contactsFilter()} deleteFromContacts = {this.deleteFromContacts}/>
         </Container>
 
       )

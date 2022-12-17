@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {FormWrap,SubmitBtn,Input, Label} from "./form.styled";
+import {FormWrap,SubmitBtn,Input, Label} from "./Form.styled";
 
 export class Form extends Component {
     handleSubmit = (e) => {
@@ -7,7 +7,6 @@ export class Form extends Component {
         const {name,telephone} = e.target.elements;
         this.setState({ name: name.value })
         this.props.onSubmit(name.value,telephone.value)
-        console.log(this.props.onSubmit);
     }
     render(){
         return(

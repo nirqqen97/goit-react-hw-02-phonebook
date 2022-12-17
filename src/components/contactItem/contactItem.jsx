@@ -1,4 +1,4 @@
-import { Item,Name,Phone,Btn } from "./contactItem.styled"
+import { Item,Name,Phone,Btn } from "./ContactItem.styled"
 
 export const ContactItem = ({c, deleteFromContacts}) =>{
     
