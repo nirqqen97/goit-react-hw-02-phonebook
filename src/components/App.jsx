@@ -44,7 +44,7 @@ export class App extends Component {
     this.setState(p => ({
       contacts: [contact, ...p.contacts]
     })) }
-    contactsFilter = () =>{   
+    contactsFilter = () => {   
       const contacts = this.state.contacts;
       const filter = this.state.filter
       const filtered = contacts.filter(contact => contact.name.toLowerCase().trim().includes(filter.toLowerCase().trim()));
@@ -67,13 +67,3 @@ export class App extends Component {
 }
 
 
-
-
-
-// {this.countTotalFeedback() > 0 ? (
-//   <Statistic good={this.state.good}
-//   neutral={this.state.neutral} 
-//   bad={this.state.bad} 
-//   total={this.countTotalFeedback()}/>
-// ) : (<Notification message={"There is no feedback"}/>)
-// } 
