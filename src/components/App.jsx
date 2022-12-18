@@ -32,7 +32,7 @@ export class App extends Component {
   }
  addContact = (name,telephone) =>{
    if (this.checkIsInContacts(name) ) {
-     alert("adas")
+     alert(`${name} is already in contacts`)
      return
    }
     const contact = {

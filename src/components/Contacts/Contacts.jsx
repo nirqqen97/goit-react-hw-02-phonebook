@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ContactItem } from "../ContactItem/ContactItem";
 import { FormList } from "./Contacts.styled";
 
@@ -8,3 +9,12 @@ export const Contacts = ({contacts,deleteFromContacts}) =>{
         })}
     </FormList>
 }
+Contacts.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          telephone: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    }
