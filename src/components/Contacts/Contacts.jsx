@@ -17,4 +17,5 @@ Contacts.propTypes = {
           telephone: PropTypes.string.isRequired,
         })
       ).isRequired,
+      deleteFromContacts: PropTypes.func.isRequired,
     }
