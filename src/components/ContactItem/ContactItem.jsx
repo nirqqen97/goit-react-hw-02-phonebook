@@ -13,7 +13,8 @@ export const ContactItem = ({c, deleteFromContacts}) =>{
         </Item>
 }
 ContactItem.propTypes = {
-    name: PropTypes.string,
-    telephone: PropTypes.string,
+    c: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          telephone: PropTypes.string.isRequired,}),
     deleteFromContacts: PropTypes.func.isRequired
 }

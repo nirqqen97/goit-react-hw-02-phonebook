@@ -57,7 +57,7 @@ export class App extends Component {
       <Container>
         <Form onSubmit = {this.addContact}/>
         <Title>Contacts</Title>
-        <InputFilter onInput = {this.addFilter}/>
+        <InputFilter onInput = {this.addFilter} value = {this.state.filter}/>
         <Contacts contacts = {this.contactsFilter()} deleteFromContacts = {this.deleteFromContacts}/>
         </Container>
 
